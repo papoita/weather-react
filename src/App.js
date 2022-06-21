@@ -2,7 +2,7 @@ import React from "react";
 import Form from "./Form";
 import Footer from "./Footer";
 
-import "./App.css";
+import "./styles/App.scss";
 
 export default function App() {
   return (
