@@ -1,16 +1,20 @@
 import React from "react";
-import Form from "./Form";
-import Footer from "./Footer";
 
+import Footer from "./Footer";
+import Weather from "./Weather";
 import "./styles/App.scss";
 
 export default function App() {
   return (
     <div className="App">
+      <div className="container">
       <h1>Weather App by Papo</h1>
       
-      <Form />
+      <Weather/>
+      
+      
       <Footer />
+    </div>
     </div>
   );
 }
