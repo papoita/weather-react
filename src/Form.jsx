@@ -32,17 +32,25 @@ export default function Form() {
   }
 
   let form = (
+    
     <form onSubmit={handleSubmit}>
-      <input type="search" placeholder="Type a city" onChange={updateCity} />
-      <input type="submit" value="Search" />
+      <div className="row">
+        <div className="col-9">
+        
+      <input type="search" placeholder="Enter a city..." onChange={updateCity} autoFocus="on" className="form-control" />
+      </div>
+      <div className="col-3">
+      <input type="submit" value="Search" className="btn btn-primary" />
+      </div>
+      </div>
     </form>
   );
 
   if (loaded) {
     return (
-      <div>
+      <div className="weather">
         {form}
-        <ul className="weather">
+        <ul >
           <li>
             The temperature in {city} is {Math.round(weather.tempC)} C
           </li>
