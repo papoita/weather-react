@@ -1,7 +1,7 @@
 import React from "react";
 
 import Footer from "./Footer";
-import Weather from "./Weather";
+import Form from "./Form";
 import "./styles/App.scss";
 
 export default function App() {
@@ -10,7 +10,7 @@ export default function App() {
       <div className="container">
       <h1>Weather App by Papo</h1>
       
-      <Weather/>
+      <Form/>
       
       
       <Footer />

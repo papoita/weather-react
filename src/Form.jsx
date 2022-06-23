@@ -15,7 +15,7 @@ export default function Form() {
       wind: response.data.wind.speed,
       description: response.data.weather[0].description,
       humidity: response.data.main.humidity,
-      icon: `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+      icon: `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
     });
     //console.log(response.data)
   }
@@ -32,33 +32,49 @@ export default function Form() {
   }
 
   let form = (
-    
     <form onSubmit={handleSubmit}>
       <div className="row">
         <div className="col-9">
-        
-      <input type="search" placeholder="Enter a city..." onChange={updateCity} autoFocus="on" className="form-control" />
-      </div>
-      <div className="col-3">
-      <input type="submit" value="Search" className="btn btn-primary" />
-      </div>
+          <input
+            type="search"
+            placeholder="Enter a city..."
+            onChange={updateCity}
+            autoFocus="on"
+            className="form-control"
+          />
+        </div>
+        <div className="col-3">
+          <input type="submit" value="Search" className="btn btn-primary" />
+        </div>
       </div>
     </form>
   );
 
   if (loaded) {
     return (
+      
       <div className="weather">
         {form}
-        <ul >
-          <li>
-            The temperature in {city} is {Math.round(weather.tempC)} C
-          </li>
-          <li>The wind is {weather.wind} km/hr</li>
-          <li>The humidity is {weather.humidity} %</li>
-          <li>The description is: {weather.description}</li>
-          <img src={weather.icon} alt={weather.description} />
-        </ul>
+        <div className="row">
+          <div className="col-6">
+            <img src={weather.icon} alt={weather.description} />
+            <div>{Math.round(weather.tempC)} C | F</div>
+            <div>
+              <ul>
+                <li>Precipitation: {weather.precipitation}%</li>
+                <li>Humidity:{weather.humidity} %</li>
+                <li>Wind: {weather.wind} km/hr</li>
+              </ul>
+            </div>
+          </div>
+          <div className="col-6">
+            <h1>{city}</h1>
+            <ul>
+              <li> Monday 09:00 pm</li>
+              <li> {weather.description}</li>
+            </ul>
+          </div>
+        </div>
       </div>
     );
   } else {
