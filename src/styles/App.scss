@@ -4,18 +4,69 @@
 
 //own css
 .App {
-  font-family: sans-serif;
+  font-family: arial, sans-serif;
   text-align: center;
+  
 }
 
 .container {
   border: 1px solid #dadde1;
-}
-.weather {
-  border: 1px solid #dadde1;
+  color: #70757a;
+  max-width:1000px;
 }
 
-.weather ul {
+h1{
+  margin:15px;
+}
+
+.footer {
+  margin:15px;
+}
+.weather {
+  font-size: 20px;
+  font-weight: 100;
+  line-height: 29px;
+  
+}
+
+.weather .form{
+  padding:30px;
+}
+.weather .conditions{
+  display:flex;
+}
+
+.weather h1{
+  font-size:48px;
+
+  line-height: 60px;
+  color:#202124;
+
+}
+
+.weather ul{
+  margin:0;
+  padding:0;
+}
+
+.weather li {
   list-style-type: none;
-  text-align:center
+  text-align:center;
+  font-size: 20px;
+  margin-left: 20px;
+  
+}
+.weather .temp{
+  font-size:60px;
+  line-height: 60px;
+  color:#202124;
+}
+
+.weather .degrees {
+  display: inline-block;
+  font-size: 16px;
+  line-height: 24px;
+  margin-top: 6px;
+padding-left: 6px;
+vertical-align: top;
 }

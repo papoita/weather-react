@@ -32,7 +32,7 @@ export default function Form() {
   }
 
   let form = (
-    <form onSubmit={handleSubmit}>
+    <form className="form" onSubmit={handleSubmit}>
       <div className="row">
         <div className="col-9">
           <input
@@ -44,7 +44,7 @@ export default function Form() {
           />
         </div>
         <div className="col-3">
-          <input type="submit" value="Search" className="btn btn-primary" />
+          <input type="submit" value="Search" className="btn btn-primary w-100" />
         </div>
       </div>
     </form>
@@ -56,9 +56,9 @@ export default function Form() {
       <div className="weather">
         {form}
         <div className="row">
-          <div className="col-6">
+          <div className="col-6 conditions">
             <img src={weather.icon} alt={weather.description} />
-            <div>{Math.round(weather.tempC)} C | F</div>
+            <div className="temp">{Math.round(weather.tempC)}</div > <div className="degrees"> C | F</div>
             <div>
               <ul>
                 <li>Precipitation: {weather.precipitation}%</li>
